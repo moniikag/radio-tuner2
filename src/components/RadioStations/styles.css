@@ -24,36 +24,3 @@
   border: none;
   border-bottom: 1px solid #ccc;
 }
-
-button#add {
-  height: 100%;
-  width: 150px;
-  padding: 0px 0 5px 0;
-  font-size: 35px;
-  color: #ccc;
-  border: none;
-  background: none;
-}
-
-.radio-stations-list li#form {
-  position: relative;
-}
-
-.radio-stations-list li#form button#close {
-  position: absolute;
-  right: 5px;
-  padding: 2px;
-}
-
-.radio-stations-list li#form input {
-  display: block;
-  margin: 2px;
-  width: 150px;
-  padding-left: 5px;
-  border: none;
-  border-bottom: 1px solid #ccc;
-}
-
-.radio-stations-list li#form input#name {
-  font-size: 20px;
-}

@@ -1,0 +1,9 @@
+button#add {
+  height: 100%;
+  width: 150px;
+  padding: 0px 0 5px 0;
+  font-size: 35px;
+  color: #ccc;
+  border: none;
+  background: none;
+}

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import AddStationButton from './AddStationButton'
+import AddStationForm from './AddStationForm'
 import RadioStation from './RadioStation'
 import './styles.css'
 
@@ -34,29 +36,10 @@ class RadioStations extends Component {
     return (
       <ul className="radio-stations-list">
         {this.renderRadioStations()}
-        {this.state.addItemFormOpen ? (
-          <li id="form">
-            <button
-              id="close"
-              onClick={this.toggleForm}
-            >
-              x
-            </button>
-            <form>
-              <input id="name" type="text" placeholder="name" />
-              <input type="text" placeholder="frequency" />
-            </form>
-          </li>
-          ) : (
-          <li>
-            <button
-              id="add"
-              onClick={this.toggleForm}
-            >
-              +
-            </button>
-          </li>
-        )}
+        {this.state.addItemFormOpen
+          ? <AddStationForm handleClick={this.toggleForm}/>
+          : <AddStationButton handleClick={this.toggleForm}/>
+        }
       </ul>
     )
   }
