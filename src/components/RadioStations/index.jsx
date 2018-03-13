@@ -32,14 +32,28 @@ class RadioStations extends Component {
     )
   }
 
+  renderButton() {
+    return (
+      <AddStationButton
+        handleClick={this.toggleForm}
+      />
+    )
+  }
+
+  renderForm() {
+    return (
+      <AddStationForm
+        handleClick={this.toggleForm}
+      />
+    )
+  }
+
   render() {
+    const { addItemFormOpen } = this.state
     return (
       <ul className="radio-stations-list">
         {this.renderRadioStations()}
-        {this.state.addItemFormOpen
-          ? <AddStationForm handleClick={this.toggleForm}/>
-          : <AddStationButton handleClick={this.toggleForm}/>
-        }
+        {addItemFormOpen ? this.renderForm() : this.renderButton()}
       </ul>
     )
   }
