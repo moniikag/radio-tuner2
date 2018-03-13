@@ -7,12 +7,20 @@ class RadioStations extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      addItemFormOpen: false,
       stations: [
         { name: 'Top Song Pl', frequency: '99.1' },
         { name: 'Best Hits Ever', frequency: '97.5' },
         { name: 'Classic EU', frequency: '109.3' },
       ],
     }
+    this.toggleForm = this.toggleForm.bind(this)
+  }
+
+  toggleForm() {
+    this.setState(
+      (prevState) => ({ addItemFormOpen: !prevState.addItemFormOpen })
+    )
   }
 
   renderRadioStations() {
@@ -26,15 +34,29 @@ class RadioStations extends Component {
     return (
       <ul className="radio-stations-list">
         {this.renderRadioStations()}
-        <li>
-          <button className="add"> + </button>
-        </li>
-        <li>
-          <form>
-            <input id="name" type="text" placeholder="name" />
-            <input type="text" placeholder="frequency" />
-          </form>
-        </li>
+        {this.state.addItemFormOpen ? (
+          <li id="form">
+            <button
+              id="close"
+              onClick={this.toggleForm}
+            >
+              x
+            </button>
+            <form>
+              <input id="name" type="text" placeholder="name" />
+              <input type="text" placeholder="frequency" />
+            </form>
+          </li>
+          ) : (
+          <li>
+            <button
+              id="add"
+              onClick={this.toggleForm}
+            >
+              +
+            </button>
+          </li>
+        )}
       </ul>
     )
   }
