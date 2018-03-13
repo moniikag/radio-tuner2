@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import RadioStation from './RadioStation'
+import './styles.css'
 
 class RadioStations extends Component {
   constructor(props) {
@@ -25,6 +26,15 @@ class RadioStations extends Component {
     return (
       <ul className="radio-stations-list">
         {this.renderRadioStations()}
+        <li>
+          <button className="add"> + </button>
+        </li>
+        <li>
+          <form>
+            <input id="name" type="text" placeholder="name" />
+            <input type="text" placeholder="frequency" />
+          </form>
+        </li>
       </ul>
     )
   }
