@@ -59,10 +59,12 @@ class RadioStations extends Component {
   render() {
     const { addItemFormOpen } = this.state
     return (
-      <ul className="radio-stations-list">
-        {this.renderRadioStations()}
-        {addItemFormOpen ? this.renderForm() : this.renderButton()}
-      </ul>
+      <section className="main-section">
+        <ul className="radio-stations-list">
+          {this.renderRadioStations()}
+          {addItemFormOpen ? this.renderForm() : this.renderButton()}
+        </ul>
+      </section>
     )
   }
 }
