@@ -10,7 +10,11 @@
   margin-left: 5px;
 }
 
-.radio-stations-list .station-link {
+.station-link {
   text-decoration: none;
   color: black;
+}
+
+.station-link.selected {
+  color: pink;
 }

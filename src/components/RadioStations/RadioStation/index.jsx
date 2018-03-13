@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import './styles.css'
 
@@ -9,12 +9,13 @@ const RadioStation = ({ station }) => {
 
   return (
     <li>
-      <Link
+      <NavLink
+        activeClassName="selected"
         className="station-link"
         to={`/stations/${urlStation}`}
       >
         <header>{station.name}</header>
-      </Link>
+      </NavLink>
       Frequency:
       <span className="station-detail">
         {station.frequency} FM
