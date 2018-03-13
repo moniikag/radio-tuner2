@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import RadioStations from './components/RadioStations'
-import SingleStation from './components/SingleStation'
-import './App.css'
+import RadioStations from '../RadioStations'
+import SingleStation from '../SingleStation'
+import './styles.css'
 
 class App extends Component {
   render() {
