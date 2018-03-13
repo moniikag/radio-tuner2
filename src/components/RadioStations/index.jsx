@@ -9,7 +9,8 @@ class RadioStations extends Component {
   }
 
   renderRadioStations() {
-    return this.state.stations.map(station =>
+    const { stations } = this.state
+    return stations.map(station =>
       <li key={station}>{station}</li>
     )
   }
