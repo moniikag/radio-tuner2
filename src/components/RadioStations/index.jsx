@@ -17,12 +17,19 @@ class RadioStations extends Component {
       ],
     }
     this.toggleForm = this.toggleForm.bind(this)
+    this.addStation = this.addStation.bind(this)
   }
 
   toggleForm() {
     this.setState(
       (prevState) => ({ addItemFormOpen: !prevState.addItemFormOpen })
     )
+  }
+
+  addStation(station) {
+    this.setState(prevState => ({
+      stations: [...prevState.stations, station],
+    }))
   }
 
   renderRadioStations() {
@@ -43,7 +50,8 @@ class RadioStations extends Component {
   renderForm() {
     return (
       <AddStationForm
-        handleClick={this.toggleForm}
+        handleClose={this.toggleForm}
+        handleSubmit={this.addStation}
       />
     )
   }

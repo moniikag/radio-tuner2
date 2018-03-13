@@ -1,28 +1,60 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import './styles.css'
 
-const AddStationForm = ({ handleClick }) => {
+class AddStationForm extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
 
-  return (
-    <li id="form">
-      <button
-        id="close"
-        onClick={handleClick}
-      >
-        x
-      </button>
-      <form>
-        <input id="name" type="text" placeholder="name" />
-        <input type="text" placeholder="frequency" />
-      </form>
-    </li>
-  )
+  handleChange(value, field) {
+    this.setState(prevState => ({
+      newStation: { ...prevState.newStation, [field]: value }
+    }))
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+    const { newStation } = this.state
+    if(newStation) { this.props.handleSubmit(newStation) }
+    this.props.handleClose()
+  }
+
+  render() {
+    const { handleClose } = this.props
+    return (
+      <li id="form">
+        <button
+          id="close"
+          onClick={handleClose}
+        >
+          x
+        </button>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            id="name"
+            onChange={(e) => this.handleChange(e.target.value, 'name')}
+            type="text"
+            placeholder="name"
+          />
+          <input
+            onChange={(e) => this.handleChange(e.target.value, 'frequency')}
+            type="text"
+            placeholder="frequency"
+          />
+          <button style={{visibility: "hidden"}} type="submit"></button>
+        </form>
+      </li>
+    )
+  }
 }
 
 AddStationForm.propTypes = {
-  handleClick: PropTypes.func,
+  handleClose: PropTypes.func,
 }
 
 export default AddStationForm
