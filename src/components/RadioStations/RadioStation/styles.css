@@ -9,3 +9,8 @@
   color: red;
   margin-left: 5px;
 }
+
+.radio-stations-list .station-link {
+  text-decoration: none;
+  color: black;
+}

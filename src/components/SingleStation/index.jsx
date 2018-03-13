@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const SingleStation = (props) => {
   return (
@@ -9,6 +10,12 @@ const SingleStation = (props) => {
       <div style={{ padding: '15px'}}>
         Some more details
       </div>
+      <Link
+        style={{ padding: '15px'}}
+        to='/'
+      >
+        Home
+      </Link>
     </section>
   )
 }
