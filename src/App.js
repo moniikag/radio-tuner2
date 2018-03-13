@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import RadioStations from './components/RadioStations'
 import SingleStation from './components/SingleStation'
@@ -14,8 +14,10 @@ class App extends Component {
         </header>
         <BrowserRouter>
           <article className="main-article">
-            <Route path="/" exact={true} component={RadioStations}/>
-            <Route path="/stations/:stationId" component={SingleStation}/>
+            <Switch>
+              <Route path="/stations/:stationId" component={SingleStation}/>
+              <Route path="/" component={RadioStations}/>
+            </Switch>
           </article>
         </BrowserRouter>
       </div>
