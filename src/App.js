@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+
+import RadioStations from './components/RadioStations'
+import './App.css'
 
 class App extends Component {
   render() {
@@ -10,22 +12,12 @@ class App extends Component {
         </header>
         <article className="main-article">
           <section className="main-section">
-            <ul className="radio-stations-list">
-              <li>
-                Top Songs PL
-              </li>
-              <li>
-                Best Hits Ever
-              </li>
-              <li>
-                Classic EU
-              </li>
-            </ul>
+            <RadioStations />
           </section>
         </article>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
