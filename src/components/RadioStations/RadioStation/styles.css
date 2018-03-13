@@ -1,0 +1,11 @@
+.radio-stations-list li header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.radio-stations-list li span.station-detail {
+  font-weight: bold;
+  color: red;
+  margin-left: 5px;
+}

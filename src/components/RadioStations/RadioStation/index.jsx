@@ -1,9 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import './styles.css'
+
 const RadioStation = ({ station }) => {
   return (
-    <li>{station.name}</li>
+    <li>
+      <header>{station.name}</header>
+      Frequency:
+      <span className="station-detail">
+        {station.frequency} FM
+      </span>
+    </li>
   )
 }
 
