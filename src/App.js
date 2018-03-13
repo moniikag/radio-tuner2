@@ -14,7 +14,7 @@ class App extends Component {
         </header>
         <BrowserRouter>
           <article className="main-article">
-            <Route path="/" component={RadioStations}/>
+            <Route path="/" exact={true} component={RadioStations}/>
             <Route path="/stations/:stationId" component={SingleStation}/>
           </article>
         </BrowserRouter>
