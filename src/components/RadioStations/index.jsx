@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 
 class RadioStations extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      stations: ['Top Song Pl', 'Best Hits Ever', 'Classic EU'],
+    }
+  }
 
   renderRadioStations() {
-    const stations = ['Top Song Pl', 'Best Hits Ever', 'Classic EU']
-    return stations.map(station =>
+    return this.state.stations.map(station =>
       <li key={station}>{station}</li>
     )
   }
