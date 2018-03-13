@@ -3,3 +3,32 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.main-article {
+  padding: 50px 50px 0 100px;
+}
+
+.main-section {
+  width: 100%;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.radio-stations-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  list-style-type: none;
+  padding: 0;
+  margin: 10px;
+}
+
+.radio-stations-list li {
+  min-width: 100px;
+  padding: 5px 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
