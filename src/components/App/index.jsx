@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 
 import Routes from './Routes'
+import Sidebar from './Sidebar'
 import './styles.css'
 
 class App extends Component {
@@ -11,9 +11,8 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Radio Tuner</h1>
         </header>
-        <article className="main-article">
-          <Routes />
-        </article>
+        <Sidebar/>
+        <Routes />
       </div>
     )
   }
