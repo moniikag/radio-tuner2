@@ -6,6 +6,7 @@ body {
 
 .main-article {
   padding: 50px 50px 0 100px;
+  margin-left: 40px;
 }
 
 .main-section {
@@ -16,3 +17,10 @@ body {
   border-radius: 10px;
 }
 
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}

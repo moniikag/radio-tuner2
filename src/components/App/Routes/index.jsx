@@ -2,13 +2,13 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 import RadioStations from '../../RadioStations'
-import SingleStation from '../../SingleStation'
+import Users from '../../Users'
 
 const Routes = () => {
   return (
     <Switch>
-      <Route path="/stations/:stationId" component={SingleStation}/>
-      <Route path="/" component={RadioStations}/>
+      <Route path='/stations' component={RadioStations}/>
+      <Route path='/users' component={Users}/>
     </Switch>
   )
 }
