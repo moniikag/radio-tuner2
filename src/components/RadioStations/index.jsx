@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
 
 import AddStationButton from './AddStationButton'
 import AddStationForm from './AddStationForm'
 import RadioStation from './RadioStation'
+import SingleStation from '../SingleStation'
 import './styles.css'
 
 class RadioStations extends Component {
@@ -59,12 +61,15 @@ class RadioStations extends Component {
   render() {
     const { addItemFormOpen } = this.state
     return (
-      <section className="main-section">
-        <ul className="radio-stations-list">
-          {this.renderRadioStations()}
-          {addItemFormOpen ? this.renderForm() : this.renderButton()}
-        </ul>
-      </section>
+      <article className="main-article">
+        <section className="main-section">
+          <ul className="radio-stations-list">
+            {this.renderRadioStations()}
+            {addItemFormOpen ? this.renderForm() : this.renderButton()}
+          </ul>
+        </section>
+        <Route path='/stations/:stationId' component={SingleStation}/>
+      </article>
     )
   }
 }
