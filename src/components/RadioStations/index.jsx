@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom'
 
 import AddStationButton from './AddStationButton'
 import AddStationForm from './AddStationForm'
+import MainArticle from 'components/shared/MainArticle'
 import RadioStation from './RadioStation'
 import SingleStation from '../SingleStation'
 import './styles.css'
@@ -61,7 +62,7 @@ class RadioStations extends Component {
   render() {
     const { addItemFormOpen } = this.state
     return (
-      <article className="main-article">
+      <MainArticle>
         <section className="main-section">
           <ul className="radio-stations-list">
             {this.renderRadioStations()}
@@ -69,7 +70,7 @@ class RadioStations extends Component {
           </ul>
         </section>
         <Route path='/stations/:stationId' component={SingleStation}/>
-      </article>
+      </MainArticle>
     )
   }
 }
