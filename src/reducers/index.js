@@ -12,3 +12,6 @@ export default reducer
 
 export const getRadioStations = (state) =>
   fromRadioStations.getRadioStations(state.radioStations)
+
+export const getRadioStation = (state, id) =>
+  fromRadioStations.getRadioStation(state.radioStations, id)
