@@ -7,10 +7,10 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
-import radioStations from 'reducers/radioStations'
+import reducer from 'reducers'
 
 const store = createStore(
-  radioStations,
+  reducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 

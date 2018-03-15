@@ -1,5 +1,5 @@
 const initialState = {
-  stationsById: {
+  byId: {
     '99.1':  { name: 'Top Song Pl', frequency: '99.1', id: '99.1' },
     '97.5':  { name: 'Best Hits Ever', frequency: '97.5', id: '97.5' },
     '109.3': { name: 'Classic EU', frequency: '109.3', id: '109.3' },
@@ -12,8 +12,8 @@ const radioStations = (state = initialState, action) => {
       const { station } = action.payload
       return {
         ...state,
-        stationsById: {
-          ...state.stationsById,
+        byId: {
+          ...state.byId,
           [station.id]: station,
         }
       }
@@ -27,4 +27,4 @@ const radioStations = (state = initialState, action) => {
 
 export default radioStations
 
-export const getRadioStations = (state) => Object.values(state.stationsById)
+export const getRadioStations = (state) => Object.values(state.byId)
