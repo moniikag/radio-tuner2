@@ -2,6 +2,7 @@
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 5px;
+  margin-right: 20px;
 }
 
 .radio-stations-list li span.station-detail {
@@ -17,4 +18,11 @@
 
 .station-link.selected {
   color: pink;
+}
+
+.delete-station {
+  position: absolute;
+  right: 5px;
+  padding: 2px 4px;
+  border-radius: 3px;
 }

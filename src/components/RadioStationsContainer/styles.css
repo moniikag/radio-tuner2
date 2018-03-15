@@ -9,6 +9,7 @@
 }
 
 .radio-stations-list li {
+  position: relative;
   min-width: 100px;
   padding: 5px 10px;
   margin: 5px;
