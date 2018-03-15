@@ -7,6 +7,7 @@ import AddStationForm from './AddStationForm'
 import MainArticle from 'components/shared/MainArticle'
 import RadioStation from './RadioStation'
 import SingleStation from '../SingleStation'
+import { getRadioStations } from 'reducers'
 import './styles.css'
 
 class RadioStations extends Component {
@@ -72,7 +73,7 @@ class RadioStations extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  stations: Object.values(state.stationsById)
+  stations: getRadioStations(state)
 })
 
 export default connect(mapStateToProps)(RadioStations)

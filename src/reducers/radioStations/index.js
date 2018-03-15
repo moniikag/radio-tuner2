@@ -15,3 +15,5 @@ const radioStations = (state = initialState, action) => {
 }
 
 export default radioStations
+
+export const getRadioStations = (state) => Object.values(state.stationsById)
