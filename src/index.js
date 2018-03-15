@@ -8,7 +8,11 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
 import radioStations from 'reducers/radioStations'
-const store = createStore(radioStations)
+
+const store = createStore(
+  radioStations,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 ReactDOM.render(
   <Provider store={store}>
