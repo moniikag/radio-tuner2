@@ -1,22 +1,19 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import MainArticle from '../shared/MainArticle'
+import { fetchUsers } from 'actions/users'
+import { getUsers } from 'reducers'
 import './styles.css'
 
 class Users extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      users: [
-        { login: 'Tom', repos_url: 'url1' },
-        { login: 'Eric', repos_url: 'url2' },
-        { login: 'Kate', repos_url: 'url3' },
-      ],
-    }
+
+  componentDidMount() {
+    this.props.fetchUsers()
   }
 
   renderUsers() {
-    const { users } = this.state
+    const { users } = this.props
     return users.map(user =>
       <li key={user.login}>
         <span className="label">{user.login}:</span>
@@ -38,4 +35,16 @@ class Users extends Component {
   }
 }
 
-export default Users
+Users.defaultProps = {
+  users: [],
+}
+
+const mapStateToProps = (state) => ({
+  users: getUsers(state),
+})
+
+const mapDispatchToProps = {
+  fetchUsers,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Users)
