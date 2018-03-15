@@ -28,7 +28,7 @@ class RadioStations extends Component {
   }
 
   addStation(station) {
-    this.props.addRadioStation({ ...station, id: station.frequency })
+    this.props.addStation({ ...station, id: station.frequency })
   }
 
   renderRadioStations() {
@@ -75,10 +75,8 @@ const mapStateToProps = (state) => ({
   stations: getRadioStations(state)
 })
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addRadioStation: (station) => dispatch(addStation(station))
-  }
+const mapDispatchToProps = {
+  addStation,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(RadioStations)
