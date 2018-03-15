@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import MainArticle from '../shared/MainArticle'
 import { fetchUsers } from 'actions/users'
-import { getUsers } from 'reducers'
+import { getUsers, getUsersFetchStatus } from 'reducers'
 import './styles.css'
 
 class Users extends Component {
@@ -26,9 +26,12 @@ class Users extends Component {
     return (
       <MainArticle>
         <section className="main-section">
-          <ul id="users-list">
-            {this.renderUsers()}
-          </ul>
+          {this.props.fetching
+            ? <div>Loading</div>
+            : <ul id="users-list">
+                {this.renderUsers()}
+              </ul>
+          }
         </section>
       </MainArticle>
     )
@@ -41,6 +44,7 @@ Users.defaultProps = {
 
 const mapStateToProps = (state) => ({
   users: getUsers(state),
+  fetching: getUsersFetchStatus(state).fetching,
 })
 
 const mapDispatchToProps = {

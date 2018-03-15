@@ -43,3 +43,9 @@ const users = (state = initialState, action) => {
 export default users
 
 export const getUsers = (state) => Object.values(state.byId)
+
+export const getUsersFetchStatus = (state) => ({
+  fetching: state.fetching,
+  fetched:  state.fetched,
+  error:    state.error,
+})

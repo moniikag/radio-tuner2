@@ -18,3 +18,6 @@ export const getRadioStation = (state, id) =>
 
 export const getUsers = (state) =>
   fromUsers.getUsers(state.users)
+
+export const getUsersFetchStatus = (state) =>
+  fromUsers.getUsersFetchStatus(state.users)
