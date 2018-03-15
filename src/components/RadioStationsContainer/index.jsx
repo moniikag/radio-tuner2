@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import uuidv1 from 'uuid/v1'
 import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -28,7 +29,8 @@ class RadioStations extends Component {
   }
 
   addStation(station) {
-    this.props.addStation({ ...station, id: station.frequency })
+    const id = uuidv1()
+    this.props.addStation({ ...station, id })
   }
 
   renderRadioStations() {
